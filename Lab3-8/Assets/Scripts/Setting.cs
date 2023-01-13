@@ -6,18 +6,13 @@ using UnityEngine.UI;
 
 public class Setting : MonoBehaviour
 {
-    private bool isFullScreen = Screen.fullScreen;
     private Resolution[] rsl;
     private List<string> resolutions;
     public Dropdown resolutiondropdown;
-    public void FullScreenToggle()
-    {
-        isFullScreen = !isFullScreen;
-        Screen.fullScreen = isFullScreen;
-    }
+
     public void Exit()
     {
-        SceneManager.UnloadScene("Setting");
+        SceneManager.LoadScene("MainMenu");
     }
     public void Awake()
     {
@@ -29,9 +24,5 @@ public class Setting : MonoBehaviour
         }
         resolutiondropdown.ClearOptions();
         resolutiondropdown.AddOptions(resolutions);
-    }
-    public void Resolution(int r)
-    {
-        Screen.SetResolution(rsl[r].width, rsl[r].height, isFullScreen);
     }
 }
