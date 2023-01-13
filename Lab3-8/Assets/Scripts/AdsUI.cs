@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UnityAdsExampleUI : MonoBehaviour
+public class AdsUI : MonoBehaviour
 {
 
-    public UnityAdsManager unityAdsManager;
+    public AdsManager unityAdsManager;
     public Button initBtn;
     public Button loadRewardedBtn;
     public Button showRewardedBtn;
@@ -24,7 +24,7 @@ public class UnityAdsExampleUI : MonoBehaviour
         //if you didn't assign in the inspector
         if (unityAdsManager == null)
         {
-            unityAdsManager = FindObjectOfType<UnityAdsManager>();
+            unityAdsManager = FindObjectOfType<AdsManager>();
         }
     }
 
@@ -44,12 +44,12 @@ public class UnityAdsExampleUI : MonoBehaviour
 
     private void OnEnable()
     {
-        UnityAdsManager.OnDebugLog += HandleDebugLog;
+        AdsManager.OnDebugLog += HandleDebugLog;
     }
 
     private void OnDisable()
     {
-        UnityAdsManager.OnDebugLog -= HandleDebugLog;
+        AdsManager.OnDebugLog -= HandleDebugLog;
     }
 
 
